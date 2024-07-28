@@ -1,0 +1,454 @@
+/* Styling for elements */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    position: relative;
+    width: 100%; 
+    height: 100%; 
+}
+html::before {
+    content: "";
+    background: url('images/pexels-polina-kovaleva-5546909.jpg') no-repeat center center / cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5; 
+    z-index: -1;     
+}
+body{
+    height: 100vh;
+    justify-content: center safe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ h1{
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    color: black;
+    text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff; 
+}
+
+.add-task-container{
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    padding: 20px 20px;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 0 0 3px;
+    margin-top: -250px;
+    margin-bottom: 20px;
+    
+}
+input{
+    flex: 5;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 5px;
+    border: 2px solid darkgray;
+    outline: none;
+    background-color: lightgray;
+}
+::placeholder {
+    color: black;
+    opacity: 1;
+}
+#add{
+    flex: 1;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2rem;
+    padding: 5px;
+    background-color: #fff;
+    color: black;
+    border: 1px solid black;
+    transition: 0.3s;
+    cursor: pointer;
+}
+#add:hover{
+   border: 1px solid black;
+   background-color: black;
+   color: white;
+}
+
+/* Styling for added elements */
+
+.task{
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 3px;
+    padding: 5px;
+    margin-top: 10px;
+    justify-content: space-between;
+    transition: 0.2s;
+}
+.task:hover{
+    background-color: bisque;
+    border: 2px solid black;
+}
+.task li{
+    list-style: none;
+    flex: 4;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor:default;
+}
+.task button {
+    cursor: pointer;
+    flex: 0.5;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.task .checkedTask {
+    transition: 0.3s;
+    color: green;
+    margin-right: 5px;
+    border: solid 2px green;
+    font-size: 1.3rem;
+}
+.task .checkedTask:hover {
+    background-color: green;
+    color: white;
+}
+.task .uncheckedTask {
+    transition: 0.3s;
+    color:blue;
+    margin-right: 5px;
+    border: solid 2px blue;
+    font-size: 1.3rem;
+}
+.task .uncheckedTask:hover {
+    background-color: blue;
+    color: #fff;
+}
+.task .delTask{
+    transition: 0.3s;
+    color: firebrick;
+    margin-right: 5px;
+    border: solid 2px firebrick;
+    font-size: 1.3rem;
+}
+.task .delTask:hover{
+    background-color: firebrick;
+    color: white;
+}
+
+/* Styling for Intruction box on desktop and laptop devices */
+
+.accordian {
+    margin-top: -60px;
+    margin-right: 1580px;
+    width: 300px;
+    background-color: beige;
+    border: 3px solid burlywood;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 0 5px;
+}
+.accordian .accordian-title {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.accordian .content-container .question {
+    padding: 10px 0px;
+    font-size: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+    position: relative;
+    transition: ease 0.2s;
+}
+.accordian .content-container .question::after {
+    content: '+';
+    position: absolute;
+    right: 5px;
+}
+.accordian .content-container .answer {
+    padding-top: 10px;
+    font-size: 16px;
+    line-height: 1;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    transition: ease .5s;
+    
+}
+.accordian .content-container.active .answer{
+    height: 50px;
+}
+.accordian .content-container.active .question{
+    font-size: 18px;
+    color: black;
+    transition: ease .5s;
+}
+.accordian .content-container.active .question::after{
+    content: '-';
+    margin-top: -3px;
+    color: red;
+    font-size: 22px;
+    transition: ease .5s;
+}
+.content-container .question:hover{
+
+    color: orangered;
+    padding-left: 5px;
+    
+}
+
+
+
+/* Media Queries for Responsive Design*/
+@media (min-width: 320px) and (max-width: 480px){
+    h1{
+        font-size: 1.3rem;
+        margin-top: 30px;
+    }
+    .add-task-container{
+        width: 350px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .accordian{
+        display: none;
+    }
+    input{
+        font-size: 1.1rem;
+    }
+    #add{
+        font-size: 1.2rem;
+        
+    }
+    .task{
+        width: 100%;
+        
+    }
+    .task li{
+        font-size: 1rem;
+    }
+    .task .checkedTask{
+        font-size: 1rem;
+    }
+    .task .delTask{
+        font-size: 1rem;
+    }
+    .task .uncheckedTask{
+        font-size: 1rem;
+    }
+    
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    h1{
+        font-size: 2.3rem;
+        margin-top: 20px;
+    }
+    .add-task-container{
+        width: 500px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .accordian{
+        display: none;
+    }
+    input{
+        font-size: 1rem;
+    }
+    #add{
+        font-size: 1rem;
+        
+    }
+    .task{
+        width: 100%;
+    }
+    .task li{
+        font-size: 1rem;
+    }
+    .task .checkedTask{
+        font-size: 1rem;
+    }
+    .task .delTask{
+        font-size: 1rem;
+    }
+    .task .uncheckedTask{
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px){
+    h1{
+        font-size: 2.8rem;
+        margin-top: 40px;
+        
+    }
+    .accordian{
+        display: none;
+    }
+    .add-task-container{
+        width: 700px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    input{
+        font-size: 2rem;
+    }
+    #add{
+        font-size: 2rem;
+        
+    }
+    .task{
+        width: 100%;
+    
+    }
+    .task li{
+        font-size: 1.8rem;
+    }
+    .task .checkedTask{
+        font-size: 1.5rem;
+    }
+    .task .delTask{
+        font-size: 1.5rem;
+    }
+    .task .uncheckedTask{
+        font-size: 1.5rem;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1280px){
+    h1{
+        font-size: 2.5rem;
+        margin-top: 20px;
+        
+    }
+    .accordian{
+        display: none;
+    }
+    .add-task-container{
+        width: 600px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    input{
+        font-size: 2rem;
+    }
+    #add{
+        font-size: 2rem;
+        
+    }
+    .task{
+        width: 100%;
+    
+    }
+    .task li{
+        font-size: 1.5rem;
+    }
+    .task .checkedTask{
+        font-size: 1.5rem;
+    }
+    .task .delTask{
+        font-size: 1.5rem;
+    }
+    .task .uncheckedTask{
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1600px){
+    h1{
+        font-size: 3.2rem;
+        margin-top: 50px;
+        
+    }
+    .accordian{
+        font-size: 1;
+        width: 250px;
+        margin-left: 290px;
+        margin-top: -125px;
+        border-radius: 5px;
+        
+    }
+    .add-task-container{
+        width: 700px;
+        margin-top: -180px;
+    
+    }
+    input{
+        font-size: 1.8rem;
+    }
+    #add{
+        font-size: 1.8rem;
+        
+    }
+    .task{
+        width: 100%;
+    
+    }
+    .task li{
+        font-size: 1.5rem;
+    }
+    .task .checkedTask{
+        font-size: 1.5rem;
+    }
+    .task .delTask{
+        font-size: 1.5rem;
+    }
+    .task .uncheckedTask{
+        font-size: 1.5rem;
+    }
+}
+@media (min-width: 1600px) and (max-width: 2560px){
+    h1{
+        font-size: 3rem;
+        margin-top: 50px;
+        
+    }
+    .accordian{
+        font-size: 1rem;
+        width: 300px;
+        margin-left: -50px;
+        margin-top: -120px;
+        border-radius: 5px;
+    }
+    .add-task-container{
+        width: 700px;
+        margin-top: -150px;
+        margin-bottom: 50px;
+    }
+    input{
+        font-size: 1.8rem;
+    }
+    #add{
+        font-size: 1.8rem;
+        
+    }
+    .task{
+        width: 100%;
+    
+    }
+    .task li{
+        font-size: 1.6rem;
+    }
+    .task .checkedTask{
+        font-size: 1.6rem;
+    }
+    .task .delTask{
+        font-size: 1.6rem;
+    }
+    .task .uncheckedTask{
+        font-size: 1.6rem;
+    }
+}
